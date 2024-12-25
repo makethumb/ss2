@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourabh Soni - Portfolio</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .section-item {
+            flex: 1 1 300px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-item {
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+            }
+            .section-item {
+                flex: 1 1 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sourabh Soni</h1>
+        <p>Software Developer</p>
+        <ul>
+            <li><a href="mailto:Sourabhs701@gmail.com">Sourabhs701@gmail.com</a></li>
+            <li><a href="https://github.com/Sourabhs701" target="_blank">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/Sourabhs701/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/Sourabhs701/Sourabh-work" target="_blank">Portfolio</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Education</h2>
+            <div class="section-content">
+                <div class="section-item" *ngFor="let edu of education">
+                    <h3>{{edu.degree}}</h3>
+                    <p>{{edu.university}}, {{edu.location}}</p>
+                    <p>{{edu.dates}} | CGPA: {{edu.cgpa}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work History</h2>
+            <div class="section-content">
+                <div class="section-item" *ngFor="let work of workHistory">
+                    <h3>{{work.title}}</h3>
+                    <p>{{work.company}}, {{work.location}}</p>
+                    <p>{{work.dates}}</p>
+                    <ul>
+                        <li *ngFor="let desc of work.description">{{desc}}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="section-content">
+                <div class="section-item" *ngFor="let project of projects">
+                    <h3>{{project.name}}</h3>
+                    <p><strong>Technologies:</strong> <span *ngFor="let tech of project.technologies">{{tech}}, </span></p>
+                    <ul>
+                        <li *ngFor="let desc of project.description">{{desc}}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Achievements</h2>
+            <div class="section-content">
+                <div class="section-item" *ngFor="let achievement of achievements">
+                    <h3>{{achievement.name}}</h3>
+                    <p>{{achievement.details}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="section-content">
+                <h3>Languages</h3>
+                <div class="skill-list">
+                    <div class="skill-item" *ngFor="let lang of technicalSkills.languages">{{lang}}</div>
+                </div>
+                <h3>Courses & Technologies</h3>
+                <div class="skill-list">
+                    <div class="skill-item" *ngFor="let course of technicalSkills.courses">{{course}}</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+```
+
+**Note:**  This HTML uses inline styling for simplicity since JavaScript is prohibited. For a more maintainable and scalable solution, you would typically use separate CSS files.  The `*ngFor` directives are placeholders;  they would be handled by a framework like Angular if you were using it.  Since JavaScript is not allowed, you'll need to manually populate the data into the HTML (or use server-side rendering).  The JSON data would need to be processed and injected before rendering this HTML.  This response focuses purely on creating the structure and basic styling as requested.
